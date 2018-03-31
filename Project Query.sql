@@ -1,6 +1,6 @@
-﻿SET search_path = "Project"
+﻿set search_path = "restaurants";
 
-CREATE TABLE RATER 
+CREATE TABLE RATER
 (
 	UserID INTEGER PRIMARY KEY,
 	Email VARCHAR,
@@ -8,6 +8,14 @@ CREATE TABLE RATER
 	JoinDate DATE,
 	Type VARCHAR CHECK (type='blog' OR type='online' OR type='food critic'), 
 	Reputation INTEGER CHECK (Reputation>=1 AND Reputation<=5) DEFAULT 1
+);
+
+CREATE TABLE RESTAURANT
+(
+	RestaurantID INTEGER PRIMARY KEY,
+	Name VARCHAR,
+	Type VARCHAR,
+	URL VARCHAR
 );
 
 
@@ -26,14 +34,6 @@ CREATE TABLE RATING
 	FOREIGN KEY (RestaurantID) REFERENCES RESTAURANT
 );
 
-CREATE TABLE RESTAURANT
-(
-	RestaurantID INTEGER PRIMARY KEY,
-	Name VARCHAR,
-	Type VARCHAR,
-	URL VARCHAR
-);
-
 CREATE TABLE LOCATION
 (
 	LocationID INTEGER PRIMARY KEY,
@@ -46,6 +46,8 @@ CREATE TABLE LOCATION
 	RestaurantID INTEGER,
 	FOREIGN KEY (RestaurantID) REFERENCES RESTAURANT
 );
+
+
 
 CREATE TABLE MENUITEM
 (
@@ -70,7 +72,7 @@ CREATE TABLE RATINGITEM
 );
 
 INSERT INTO RATER
-	VALUES (1,'big.joe@gmail.com','Big Joe','2017-01-01','online',3);
+VALUES (1,'big.joe@gmail.com','Big Joe','2017-01-01','online',3);
 INSERT INTO RATER
 	VALUES (2,'only.vegan@gmail.com','Only Vegan','2017-01-02','blog',2);
 INSERT INTO RATER
