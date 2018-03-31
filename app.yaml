@@ -1,9 +1,0 @@
-application: uo-csi2132
-version: 1
-runtime: php55
-api_version: 1
-threadsafe: true
-
-handlers:
-- url: .*
-  script: main.php
