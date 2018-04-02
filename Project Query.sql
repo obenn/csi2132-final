@@ -1,6 +1,6 @@
-﻿set search_path = "restaurants";
+﻿SET search_path = "Project"
 
-CREATE TABLE RATER
+CREATE TABLE RATER 
 (
 	UserID INTEGER PRIMARY KEY,
 	Email VARCHAR,
@@ -8,14 +8,6 @@ CREATE TABLE RATER
 	JoinDate DATE,
 	Type VARCHAR CHECK (type='blog' OR type='online' OR type='food critic'), 
 	Reputation INTEGER CHECK (Reputation>=1 AND Reputation<=5) DEFAULT 1
-);
-
-CREATE TABLE RESTAURANT
-(
-	RestaurantID INTEGER PRIMARY KEY,
-	Name VARCHAR,
-	Type VARCHAR,
-	URL VARCHAR
 );
 
 
@@ -34,6 +26,14 @@ CREATE TABLE RATING
 	FOREIGN KEY (RestaurantID) REFERENCES RESTAURANT
 );
 
+CREATE TABLE RESTAURANT
+(
+	RestaurantID INTEGER PRIMARY KEY,
+	Name VARCHAR,
+	Type VARCHAR,
+	URL VARCHAR
+);
+
 CREATE TABLE LOCATION
 (
 	LocationID INTEGER PRIMARY KEY,
@@ -46,8 +46,6 @@ CREATE TABLE LOCATION
 	RestaurantID INTEGER,
 	FOREIGN KEY (RestaurantID) REFERENCES RESTAURANT
 );
-
-
 
 CREATE TABLE MENUITEM
 (
@@ -72,7 +70,7 @@ CREATE TABLE RATINGITEM
 );
 
 INSERT INTO RATER
-VALUES (1,'big.joe@gmail.com','Big Joe','2017-01-01','online',3);
+	VALUES (1,'big.joe@gmail.com','Big Joe','2017-01-01','online',3);
 INSERT INTO RATER
 	VALUES (2,'only.vegan@gmail.com','Only Vegan','2017-01-02','blog',2);
 INSERT INTO RATER
@@ -340,7 +338,7 @@ INSERT INTO LOCATION
 INSERT INTO LOCATION
 	VALUES (9,'09/01/2016','Colin','613-999-999','1 Lees St','10:00am','10:00pm',9);
 INSERT INTO LOCATION
-	VALUES (10,'10/01/2016','Robert,''613-123-1234','12 Lees St','10:00am','10:00pm',10);
+	VALUES (10,'10/01/2016','Robert','613-123-1234','12 Lees St','10:00am','10:00pm',10);
 INSERT INTO LOCATION
 	VALUES (11,'11/01/2016','Jasmine','613-234-5678-','123 Lees St','10:00am','8:00pm',11);
 INSERT INTO LOCATION
@@ -365,7 +363,7 @@ INSERT INTO MENUITEM
 INSERT INTO MENUITEM
 	VALUES (9,'Bruschetta','food','starter','Baked baguette served with diced tomatoes, roasted garlic and olive oil',4.00,10);
 INSERT INTO MENUITEM
-	VALUES (10,'Cheese sticks','food','starter','Breaded mozzarella cheese ',2.50,8);
+	VALUES (10,'Cheese sticks','food','starter','Breaded mozzarella cheese',2.50,8);
 INSERT INTO MENUITEM
 	VALUES (11,'Nachos','food','starter','Served with peppers, olives, jalapenos, and monterey jack cheese',6.00,8);
 INSERT INTO MENUITEM
@@ -629,3 +627,211 @@ INSERT INTO RATINGITEM
 	VALUES (5,'2017-8-11',45,1,'X');
 INSERT INTO RATINGITEM
 	VALUES (6,'2017-8-12',7,1,'X');
+
+/*
+	Restaurents and menus
+*/
+/*
+	a
+	Display all the information about a user‐specified restaurant. That is, the user should select the
+	name of the restaurant from a list, and the information as contained in the restaurant and
+	location tables should then displayed on the screen.
+*/
+SELECT restaurant.name, restaurant.type, restaurant.url, location.firstopendate, location.managername, location.phonenumber, location.streetaddress, location.houropen, location.hourclose
+FROM RESTAURANT
+INNER JOIN LOCATION ON RESTAURANT.RestaurantID = LOCATION.RestaurantID;
+/*
+	b
+	Display the full menu of a specific restaurant. That is, the user should select the name of the
+	restaurant from a list, and all menu items, together with their prices, should be displayed on the
+	screen. The menu should be displayed based on menu item categories.
+	***** Note the restaurant.restaurantid must be able to change cause it is used as selection
+	***** or can use restaurant.name = ' '
+*/
+SELECT menuitem.name, menuitem.type, menuitem.category, menuitem.description
+FROM menuitem
+INNER JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+WHERE restaurant.name = 'Ottawa Pizza House'
+ORDER BY menuitem.category DESC;
+/*
+	c
+	For each user‐specified category of restaurant, list the manager names together with the date
+	that the locations have opened. The user should be able to select the category (e.g. Italian or
+	Thai) from a list.
+	***** restaurant.type variable from webpage
+*/
+SELECT restaurant.name, location.managername, location.firstopendate
+FROM location
+INNER JOIN restaurant ON location.restaurantid = restaurant.restaurantid
+WHERE restaurant.type = 'italian';
+/*
+	d
+	Given a user‐specified restaurant, find the name of the most expensive menu item. List this
+	information together with the name of manager, the opening hours, and the URL of the
+	restaurant. The user should be able to select the restaurant name (e.g. El Camino) from a list.
+	****could change the data so that there is only one most expensive item
+*/
+/*
+SELECT MenuItem.*, Location.Managername, Location.Houropen, Location.Hourclose, Restaurant.URL
+FROM Restaurant Restaurant 
+	JOIN MenuItem MenuItem 
+		ON Restaurant.RestaurantID = MenuItem.RestaurantID 
+	JOIN Location Location 
+		ON Restaurant.RestaurantID = Location.RestaurantID
+GROUP BY(MenuItem.ItemID, Location.Managername,Location.Houropen, Location.Hourclose,Restaurant.URL,Restaurant.Name)
+HAVING Restaurant.Name  = 'Name' 
+	AND MenuItem.Price = MAX(MenuItem.price) 
+;
+*/
+/*
+SELECT MAX(menuitem.price),menuitem.name, MAX(location.managername), MAX(location.houropen), MAX(restaurant.url)
+FROM menuitem
+INNER JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+INNER JOIN location ON location.restaurantid = restaurant.restaurantid
+WHERE restaurant.name = 'Ottawa Pizza House'
+GROUP BY
+*/
+/*
+SELECT menuitem.name, pmax, location.managername, location.houropen, restaurant.url
+FROM (	SELECT restaurant.name, MAX(menuitem.price) AS pmax
+	FROM menuitem
+	JOIN restaurant ON restaurant.restaurantid = menuitem.restaurantid
+	WHERE restaurant.name = 'Ottawa Pizza House'
+	GROUP BY 1
+	) AS tpmax
+JOIN menuitem ON menuitem.restaurantid = restaurant.restaurantid 
+JOIN location ON restaurant.restaurantid = location.restaurantid
+WHERE restaurant.name = 'Ottawa Pizza House';
+*/
+/*
+SELECT menuitem.name, location.managername, location.houropen, restaurant.url
+FROM menuitem
+JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+JOIN location ON restaurant.restaurantid = location.restaurantid
+WHERE restaurant.name = 'Ottawa Pizza House' AND menuitem.price = (	SELECT MAX(menuitem.price)
+								FROM menuitem
+								GROUP BY menuitem.restaurantid);
+*/
+SELECT menuitem.name, location.managername, location.houropen, restaurant.url
+FROM menuitem
+JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+JOIN location ON restaurant.restaurantid = location.restaurantid
+WHERE menuitem.price IN (
+	SELECT MAX(menuitem.price)
+	FROM menuitem
+	JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+	WHERE restaurant.name = 'Ottawa Pizza House'
+	GROUP BY menuitem.restaurantid);
+/*
+	e
+	For each type of restaurant (e.g. Indian or Irish) and the category of menu item (appetiser, main
+	or desert), list the average prices of menu items for each category.
+*/
+SELECT restaurant.type, menuitem.category, CAST(AVG(CAST(menuitem.price AS decimal)) AS money)
+FROM menuitem
+JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+WHERE restaurant.type = 'italian' AND menuitem.category = 'dessert'
+GROUP BY 1, 2;
+/*
+	Ratings of restaurants
+*/
+/*
+	f
+	Find the total number of rating for each restaurant, for each rater. That is, the data should be
+	grouped by the restaurant, the specific raters and the numeric ratings they have received.
+*/
+/*
+SELECT restaurant.name, rater.name, rating.price, rating.food, rating.mood, rating.staff
+FROM rating
+*/
+/*
+	g
+	Display the details of the restaurants that have not been rated in January 2015. That is, you should display the name of the 
+	restaurant together with the phone number and the type of food.
+	*** does every rating that is not in 2015 so 88 occurences
+*/
+SELECT restaurant.name, location.phonenumber, restaurant.type
+FROM restaurant
+JOIN location ON location.restaurantid = restaurant.restaurantid
+JOIN rating ON restaurant.restaurantid = rating.restaurantid
+WHERE rating.date NOT BETWEEN '2015-01-01' AND '2015-12-31'
+/*
+	h
+	Find the names and opening dates of the restaurants that obtained Staff rating that is lower
+	than any rating given by rater X. Order your results by the dates of the ratings. (Here, X refers to
+	any rater of your choice.)
+*/
+SELECT restaurant.name, location.firstopendate
+FROM restaurant
+JOIN location ON location.restaurantid = restaurant.restaurantid
+JOIN rating ON rating.restaurantid = restaurant.restaurantid
+WHERE rating.staff < (
+			SELECT MIN(mintable.submin)
+			FROM (
+				SELECT rating.userid,
+				       CASE WHEN rating.price < rating.food AND rating.price < rating.mood AND rating.price < rating.staff THEN rating.price
+					    WHEN rating.food < rating.price AND rating.food < rating.mood AND rating.food < rating.staff THEN rating.food
+					    WHEN rating.mood < rating.price AND rating.mood < rating.food AND rating.mood < rating.staff THEN rating.mood
+					    ELSE rating.staff
+				       END AS submin
+				From rating
+				JOIN rater ON rating.userid = rater.userid
+				WHERE rater.name = 'Big Joe') AS mintable);
+/*
+	i
+	List the details of the Type Y restaurants that obtained the highest Food rating. Display the
+	restaurant name together with the name(s) of the rater(s) who gave these ratings. (Here, Type Y refers to any 
+	restaurant type of your choice, e.g. Indian or Burger.)
+*/
+SELECT restaurant.name, rater.name
+FROM (	SELECT restaurant.restaurantid, MAX(rating.food)
+	FROM rating, restaurant
+	GROUP BY restaurant.restaurantid) AS tmp, rating
+JOIN restaurant ON restaurant.restaurantid = rating.restaurantid
+JOIN rater ON rater.userid = rating.userid
+WHERE restaurant.type = 'italian' AND tmp.restaurantid = restaurant.restaurantid;
+/*
+	j
+	Provide a query to determine whether Type Y restaurants are “more popular” than other restaurants. 
+	(Here, Type Y refers to any restaurant type of your choice, e.g. Indian or Burger.) Yes, this query 
+	is open to your own interpretation!
+	*****My interpretaion is the restaurants with the highest mood ratings
+*/
+SELECT restaurant.name, rater.name
+FROM (	SELECT restaurant.restaurantid, MAX(rating.mood)
+	FROM rating, restaurant
+	GROUP BY restaurant.restaurantid) AS tmp, rating
+JOIN restaurant ON restaurant.restaurantid = rating.restaurantid
+JOIN rater ON rater.userid = rating.userid
+WHERE restaurant.type = 'italian' AND tmp.restaurantid = restaurant.restaurantid;
+/*
+	Raters and their ratings
+*/
+/*
+	k
+	Find the names, join‐date and reputations of the raters that give the highest overall rating, in
+	terms of the Food and the Mood of restaurants. Display this information together with the
+	names of the restaurant and the dates the ratings were done.
+	*****Im going to keep this easy by giving two tables, one giving the top food avg and the other the top mood avg
+*/
+SELECT rater.name, rater.joindate, rater.reputation, restaurant.name, rating.date
+FROM rating
+JOIN rater ON rating.userid = rater.userid
+JOIN restaurant ON rating.userid = restaurant.restaurantid
+WHERE 
+
+
+SELECT 
+SELECT MAX(tablefoodavg.foodavg)
+FROM	(SELECT rating.userid, AVG(rating.food) AS foodavg
+	FROM rating
+	GROUP BY rating.userid
+	ORDER BY foodavg DESC) AS tablefoodavg
+
+SELECT `id` 
+FROM `mytable` 
+WHERE (`group_id`, `time`) IN (
+  SELECT `group_id`, MAX(`time`) as `time` 
+  FROM `mytable`
+  GROUP BY `group_id`
+)
