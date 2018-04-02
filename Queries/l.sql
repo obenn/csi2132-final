@@ -5,6 +5,7 @@
 	restaurant and the dates the ratings were done.
 	***** Basically the same query as above, I am not sure if it works well
 */
+/*
 SELECT rater.name, rater.reputation, restaurant.name, rating.date
 FROM	(SELECT rating.userid, AVG(rating.food) AS foodavg
 	FROM rating
@@ -22,3 +23,17 @@ FROM	(SELECT rating.userid, AVG(rating.mood) AS foodavg
 JOIN rater ON tablefoodavg.userid = rater.userid
 JOIN rating ON tablefoodavg.userid = rating.userid
 JOIN restaurant ON rating.userid = restaurant.restaurantid;
+*/
+SELECT rater.name, rater.reputation, restaurant.name, rating.date
+FROM rating
+JOIN rater ON rater.userid = rating.userid
+JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
+WHERE rating.food IN 	(SELECT MAX(rating.food)
+			FROM rating);
+
+SELECT rater.name, rater.reputation, restaurant.name, rating.date
+FROM rating
+JOIN rater ON rater.userid = rating.userid
+JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
+WHERE rating.mood IN 	(SELECT MAX(rating.mood)
+			FROM rating);
