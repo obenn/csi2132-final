@@ -1,4 +1,4 @@
-SET search_path = "Project"
+SET search_path = "restaurants";
 
 CREATE TABLE RATER 
 (

@@ -16,7 +16,7 @@
 $dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=csi2132")
 or die('Could not connect: ' . pg_last_error());
 
-$query = file_get_contents('test.sql');
+$query = file_get_contents($_POST['querybutton']);
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
 // Printing results in HTML
