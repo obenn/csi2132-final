@@ -48,9 +48,8 @@
         require "connection.php";
         $id = $_GET['id'];
 
-        $restaurant_db = pg_query("SELECT * FROM restaurants.restaurant WHERE restaurantid='{$id}'") or die('Query failed: ' . pg_last_error());
-        $restaurant = pg_fetch_array($restaurant_db, null, PGSQL_ASSOC);
-        pg_free_result($restaurant_db);
+        $restaurant = pg_query("SELECT * FROM restaurants.restaurant WHERE restaurantid='{$id}'") or die('Query failed: ' . pg_last_error());
+        $restaurant = pg_fetch_array($restaurant, null, PGSQL_ASSOC);
 
         $types = pg_query("SELECT DISTINCT type FROM restaurants.menuitem WHERE restaurantid='{$id}'") or die('Query failed: ' . pg_last_error());
         while ($type = pg_fetch_array($types, null, PGSQL_ASSOC)['type']) {
@@ -81,8 +80,32 @@
             echo "\t</tbody>\n";
             echo "</table>\n";
         }
+
+        $exp = pg_query("
+            SELECT menuitem.name, location.managername, location.houropen, restaurant.url
+            FROM menuitem
+            JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+            JOIN location ON restaurant.restaurantid = location.restaurantid
+            WHERE menuitem.price IN (
+                SELECT MAX(menuitem.price)
+                FROM menuitem
+                JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+                WHERE restaurant.restaurantid = $id /* $$$ */
+	            GROUP BY menuitem.restaurantid);") or die('Query failed: ' . pg_last_error());
+        $exp = pg_fetch_array($exp, null, PGSQL_ASSOC);
+        $name = $exp['name'];
+        $manager = $exp['managername'];
+        $open = $exp['houropen'];
+        $url = $exp['url'];
+        echo "<br>";
+        echo "<i>Most expensive item is $name</i>";
+        echo "</div>";
+        echo "<footer class='footer'>";
+        echo "<div class='container'>";
+        echo "<span class='text-muted'>Managed by $manager. Opening hour is $open. <a href=https://$url>$url</a> </span><br>";
+        echo "</div>";
+        echo "</footer>";
         ?>
-    </div>
 </main>
 </body>
 </html>
