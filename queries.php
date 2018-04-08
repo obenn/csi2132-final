@@ -28,15 +28,33 @@
             <li class="nav-item">
                 <a class="nav-link" href="restaurants.php"><i class="fas fa-utensils"></i> Restaurants</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
             </li>
         </ul>
     </div>
 </nav>
+
+<!-- -->
+
+<div class="container">
+    <h1>Our Restaurants</h1>
+    <button type="submit" form="form1" value="Submit">Submit</button>
+    <form method="POST" action="nw_check_exec.php">
+        <input type="submit" name="nw_update" value="NW_Update"/>
+    </form>
+    <form action = "" method = "post">
+        <input type="submit" name="upvote" value="Upvote" />
+    </form>
+
+</div>
+
+
+</body>
+</html>
