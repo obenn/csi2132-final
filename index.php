@@ -37,9 +37,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
-            </li>
         </ul>
     </div>
 </nav>
