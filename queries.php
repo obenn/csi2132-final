@@ -43,17 +43,121 @@
 
 <!-- -->
 
-<div class="container">
-    <h1>Our Restaurants</h1>
-    <button type="submit" form="form1" value="Submit">Submit</button>
-    <form method="POST" action="nw_check_exec.php">
-        <input type="submit" name="nw_update" value="NW_Update"/>
-    </form>
-    <form action = "" method = "post">
-        <input type="submit" name="upvote" value="Upvote" />
-    </form>
 
-</div>
+<main role="main" class="container">
+    <div class="jumbotron">
+
+        <?php
+        if ($_POST['query'] != null) {
+            $query = $_POST['query'];
+            include 'connection.php';
+            if ($query == "Queries/a.sql") {
+                echo "<h2>Query A</h2>";
+                echo "<p>Display all the information about a user‐specified restaurant. That is, the user should select the
+	name of the restaurant from a list, and the information as contained in the restaurant and
+	location tables should then displayed on the screen.</p>";
+                $query = file_get_contents($query);
+                echo "<h2>$type</h2>\n";
+                echo "<table class='table'>\n";
+                echo "<thead>\n";
+                echo "<tr>\n";
+                echo "<th scope=\"col\">Name</th>\n";
+                echo "<th scope=\"col\">Type</th>\n";
+                echo "<th scope=\"col\">Url</th>\n";
+                echo "<th scope=\"col\">First Open Date</th>\n";
+                echo "<th scope=\"col\">Manager Name</th>\n";
+                echo "<th scope=\"col\">Phone Number</th>\n";
+                echo "<th scope=\"col\">Street Address</th>\n";
+                echo "<th scope=\"col\">Opening Hour</th>\n";
+                echo "<th scope=\"col\">Closing Hour</th>\n";
+                echo "</tr>\n";
+                echo "</thead>\n";
+                echo "<tbody>\n";
+                $results = pg_query($query) or die('Query failed: ' . pg_last_error());
+                while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
+                    $name = $result['name'];
+                    $type = $result['type'];
+                    $url = $result['url'];
+                    $firstopendate = $result['firstopendate'];
+                    $managername = $result['managername'];
+                    $phonenumber = $result['phonenumber'];
+                    $streetaddress = $result['streetaddress'];
+                    $houropen = $result['houropen'];
+                    $hourclose = $result['hourclose'];
+                    echo "<tr>\n";
+                    echo "<td>$name</td>\n";
+                    echo "<td>$type</td>\n";
+                    echo "<td>$url</td>\n";
+                    echo "<td>$firstopendate</td>";
+                    echo "<td>$managername</td>";
+                    echo "<td>$phonenumber</td>";
+                    echo "<td>$streetaddress</td>";
+                    echo "<td>$houropen</td>";
+                    echo "<td>$hourclose</td>";
+                    echo "</tr>\n";
+                }
+            }
+
+        } else {
+            echo "<h1>Queries</h1>\n";
+            echo "<br>";
+            echo "<form action='queries.php' method='post'>\n";
+            echo "\t<h3>Restaurants and Menus</h3>\n";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/a.sql'>A</button>";
+            echo "<p>Information about restaurant</p>";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/b.sql'>B</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/c.sql'>C</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/d.sql'>D</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/e.sql'>E</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<h3>Ratings of Restaurants</h3>\n";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/f.sql'>F</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/g.sql'>G</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/h.sql'>H</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/i.sql'>I</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/j.sql'>J</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<h3>Raters and their Ratings</h3>\n";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/k.sql'>K</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/l.sql'>L</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/m.sql'>M</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/n.sql'>N</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/o.sql'>O</button>\n";
+            echo "<br>";
+            echo "<br>";
+            echo "</form>\n";
+        }
+        ?>
+    </div>
+</main>
 
 
 </body>
