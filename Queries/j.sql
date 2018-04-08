@@ -5,7 +5,7 @@
 	is open to your own interpretation!
 	*****My interpretaion is the restaurants with the highest mood ratings
 */
-SELECT restaurant.name, rater.name
+SELECT restaurant.name as restaurant, rater.name
 FROM (	SELECT restaurant.restaurantid, MAX(rating.mood)
 	FROM rating, restaurant
 	GROUP BY restaurant.restaurantid) AS tmp, rating

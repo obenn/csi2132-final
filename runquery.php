@@ -12,9 +12,7 @@
 </form>
 
 <?php
-
-$dbconn = pg_connect("host=localhost port=5432 dbname=postgres user=postgres password=csi2132")
-or die('Could not connect: ' . pg_last_error());
+require "connection.php";
 
 $query = file_get_contents($_POST['querybutton']);
 $result = pg_query($query) or die('Query failed: ' . pg_last_error());
