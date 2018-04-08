@@ -40,3 +40,37 @@
         </ul>
     </div>
 </nav>
+
+<div class="container">
+    <h1>Ratings</h1>
+    <?php
+    require "connection.php";
+
+    $restaurants = pg_query("SELECT restaurantid, name FROM restaurants.restaurant") or die('Query failed: ' . pg_last_error());
+
+    while ($restaurant = pg_fetch_array($restaurants, null, PGSQL_ASSOC)) {
+        $id = $restaurant['restaurantid'];
+        $name = $restaurant['name'];
+
+        echo "<div class=\"col-xs-12\" style=\"height:50px;\"></div>";
+        echo "<h4><a href='info.php?id=$id'>$name</a></h4>\n";
+
+
+        $ratings = pg_query("
+            SELECT rater.name, COUNT(rating.food) AS number_rating
+            FROM restaurants.rating
+            JOIN restaurants.rater ON rating.userid = rater.userid
+            WHERE rating.restaurantid = $id
+            GROUP BY rater.name") or die('Query failed: ' . pg_last_error());
+        while ($rating = pg_fetch_array($ratings, null, PGSQL_ASSOC)) {
+            $ratername = $rating['name'];
+            $num = $rating['number_rating'];
+            echo "<p>$ratername, number of ratings: $num</p>";
+        }
+    }
+    ?>
+</div>
+
+
+</body>
+</html>

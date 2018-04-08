@@ -2,13 +2,13 @@
 
 #### Restaurants
 * ~~a~~
-* b
-* c
-* d
-* e
+* ~~b~~
+* ~~c~~
+* ~~d~~
+* e..
 
 #### Ratings
-* f
+* ~~f~~
 * g
 * h
 * i
