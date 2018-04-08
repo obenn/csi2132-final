@@ -2,8 +2,8 @@
 
 #### Restaurants
 * ~~a~~
-* b
-* c
+* ~~b~~
+* ~~c~~
 * d
 * e
 
