@@ -28,10 +28,10 @@
             <li class="nav-item">
                 <a class="nav-link" href="restaurants.php"><i class="fas fa-utensils"></i> Restaurants</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
             </li>
             <li class="nav-item">
