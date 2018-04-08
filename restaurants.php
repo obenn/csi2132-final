@@ -54,7 +54,6 @@
 
     $types = pg_query("SELECT DISTINCT type FROM restaurants.restaurant") or die('Query failed: ' . pg_last_error());
 
-    // Printing results in HTML
 
     while ($type = pg_fetch_array($types, null, PGSQL_ASSOC)['type']) {
         echo "<div class=\"col-xs-12\" style=\"height:50px;\"></div>";
@@ -81,13 +80,6 @@
         }
         echo "</div>\n";
     }
-
-    // Free resultset
-    pg_free_result($types);
-    pg_free_result($restaurants);
-
-    // Closing connection
-    pg_close($dbconn);
     ?>
 </div>
 
