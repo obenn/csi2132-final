@@ -4,6 +4,8 @@
 	terms of the Food and the Mood of restaurants. Display this information together with the
 	names of the restaurant and the dates the ratings were done.
 	*****Im going to keep this easy by giving two tables, one giving the top food avg and the other the top mood avg
+	OR in the where
+	Done
 */
 /*
 SELECT rater.name, rater.joindate, rater.reputation, restaurant.name, rating.date
@@ -35,4 +37,4 @@ FROM rating
 JOIN rater ON rater.userid = rating.userid
 JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
 WHERE rating.mood IN 	(SELECT MAX(rating.mood)
-			FROM rating);''
+			FROM rating);

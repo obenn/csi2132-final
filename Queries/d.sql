@@ -3,7 +3,7 @@
 	Given a user‐specified restaurant, find the name of the most expensive menu item. List this
 	information together with the name of manager, the opening hours, and the URL of the
 	restaurant. The user should be able to select the restaurant name (e.g. El Camino) from a list.
-	****could change the data so that there is only one most expensive item
+	Good
 */
 /*
 SELECT MenuItem.*, Location.Managername, Location.Houropen, Location.Hourclose, Restaurant.URL
@@ -54,5 +54,5 @@ WHERE menuitem.price IN (
 	SELECT MAX(menuitem.price)
 	FROM menuitem
 	JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
-	WHERE restaurant.name = 'Ottawa Pizza House'
+	WHERE restaurant.name = 'Ottawa Pizza House' /* $$$ */
 	GROUP BY menuitem.restaurantid);

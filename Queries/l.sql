@@ -3,7 +3,8 @@
 	Find the names and reputations of the raters that give the highest overall rating, in terms of the
 	Food or the Mood of restaurants. Display this information together with the names of the
 	restaurant and the dates the ratings were done.
-	***** Basically the same query as above, I am not sure if it works well
+	***** Basically the same query as above
+	Done
 */
 /*
 SELECT rater.name, rater.reputation, restaurant.name, rating.date
