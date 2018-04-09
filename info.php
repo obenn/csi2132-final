@@ -33,6 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -53,6 +56,7 @@
             pg_query("DELETE FROM restaurants.restaurant WHERE restaurantid='{$id}'") or die('Query failed: ' . pg_last_error());
             echo "<h1>It's gone, completely. <i class=\"fas fa-frown\"></i></h1>";
             echo "<h3>Select a different <a href='restaurants.php'>Restaurant</a></h3>";
+            echo "</div>";
 
         } else if ($_GET['id'] != null) {
             require "connection.php";
@@ -75,21 +79,24 @@
             $close = $location['hourclose'];
             echo "<h1>$name</h1>";
             echo "<p>$type</p>";
-            echo "<a href=https://$url><p>website</p></a>";
+            echo "<a href=https://$url><p>$url</p></a>";
             echo "<h3>$address</h3>";
             echo "<p>Since $date</p>";
             echo "<p>Managed by $manager : $phone</p>";
             echo "<h4>Hours: $open - $close</h4>";
             echo "<a class=\"btn btn-lg btn-primary\" href=\"menu.php?id=$id\" role=\"button\">Menu &raquo;</a>\n";
             echo "<a class=\"btn btn-lg btn-light\" href=\"ratings.php?id=$id\" role=\"button\">View ratings</a>\n";
+            echo "</div>";
+            echo "<footer class='footer'>";
             echo "<form action=\"info.php\" method=\"post\">\n";
             echo "<button class=\"btn btn-danger\" type=\"submit\" name='id' value=$id>Delete?</button>\n";
+            echo "</footer>";
             echo "</form>";
         } else {
             echo "<h1>Select a <a href='restaurants.php'>Restaurant</a></h1>";
+            echo "</div>";
         }
         ?>
-    </div>
 </main>
 
 
