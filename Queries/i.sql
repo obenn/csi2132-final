@@ -5,10 +5,13 @@
 	restaurant type of your choice, e.g. Indian or Burger.)
 	Done
 */
-SELECT restaurant.name, rater.name
-FROM (	SELECT restaurant.restaurantid, MAX(rating.food)
-	FROM rating, restaurant
-	GROUP BY restaurant.restaurantid) AS tmp, rating
-JOIN restaurant ON restaurant.restaurantid = rating.restaurantid
-JOIN rater ON rater.userid = rating.userid
-WHERE restaurant.type = 'italian' /* $$$ */ AND tmp.restaurantid = restaurant.restaurantid;
+SELECT DISTINCT *
+FROM (
+			 SELECT restaurant.name AS rename, rater.name AS raname
+			 FROM (	SELECT restaurant.restaurantid, MAX(rating.food)
+							 FROM rating, restaurant
+							 GROUP BY restaurant.restaurantid) AS tmp, rating
+				 JOIN restaurant ON restaurant.restaurantid = rating.restaurantid
+				 JOIN rater ON rater.userid = rating.userid
+			 WHERE restaurant.type = 'italian' /* $$$ */ AND tmp.restaurantid = restaurant.restaurantid) AS tmp
+ORDER BY tmp.rename;

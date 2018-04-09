@@ -33,6 +33,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
+            </li>
         </ul>
     </div>
 </nav>
