@@ -53,8 +53,8 @@
             include 'connection.php';
 
             if ($query == "Queries/a.sql") {
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['a'] != null) {
+                    $name = $_POST['a'];
                 } else {
                     $name = "*";
                 }
@@ -62,7 +62,10 @@
                 echo "<p>Display all the information about a user‐specified restaurant. That is, the user should select the
 	            name of the restaurant from a list, and the information as contained in the restaurant and
 	            location tables should then displayed on the screen.</p>";
-                $query = file_get_contents($query) . "'$name'";
+                $query = "SELECT restaurant.name, restaurant.type, restaurant.url, location.firstopendate, location.managername, location.phonenumber, location.streetaddress, location.houropen, location.hourclose
+                FROM RESTAURANT
+                INNER JOIN LOCATION ON RESTAURANT.RestaurantID = LOCATION.RestaurantID
+                WHERE restaurant.name = '$name';";
                 echo "<code>$query</code>";
                 echo "<h2>$type</h2>\n";
                 echo "<table class='table'>\n";
@@ -80,7 +83,10 @@
                 echo "</tr>\n";
                 echo "</thead>\n";
                 echo "<tbody>\n";
-                $results = pg_query($query) or die('Query failed: ' . pg_last_error());
+                $results = pg_query("SELECT restaurant.name, restaurant.type, restaurant.url, location.firstopendate, location.managername, location.phonenumber, location.streetaddress, location.houropen, location.hourclose
+                FROM RESTAURANT
+                INNER JOIN LOCATION ON RESTAURANT.RestaurantID = LOCATION.RestaurantID
+                WHERE restaurant.name = '$name';") or die('Query failed: ' . pg_last_error());
                 while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
                     $name = $result['name'];
                     $type = $result['type'];
@@ -107,8 +113,8 @@
             } else if ($query == "Queries/b.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['b'] != null) {
+                    $name = $_POST['b'];
                 } else {
                     $name = "*";
                 }
@@ -158,8 +164,8 @@
             } else if ($query == "Queries/c.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['c'] != null) {
+                    $name = $_POST['c'];
                 } else {
                     $name = "*";
                 }
@@ -205,8 +211,8 @@
             } else if ($query == "Queries/d.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['d'] != null) {
+                    $name = $_POST['d'];
                 } else {
                     $name = "*";
                 }
@@ -267,12 +273,13 @@
                 }
             } else if ($query == "Queries/e.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
+                */
 
 
                 echo "<h2>Query E</h2>";
@@ -315,12 +322,13 @@
                 }
             } else if ($query == "Queries/e.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
+                */
 
 
                 echo "<h2>Query E</h2>";
@@ -363,12 +371,13 @@
                 }
             } else if ($query == "Queries/f.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
+                */
 
 
                 echo "<h2>Query F</h2>";
@@ -411,13 +420,13 @@
                 }
             } else if ($query == "Queries/g.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
-
+                */
 
                 echo "<h2>Query G</h2>";
                 echo "<p>	Display the details of the restaurants that have not been rated in January 2015. That is, you should display the name of the 
@@ -462,8 +471,8 @@
             } else if ($query == "Queries/h.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['h'] != null) {
+                    $name = $_POST['h'];
                 } else {
                     $name = "*";
                 }
@@ -538,8 +547,8 @@
             } else if ($query == "Queries/i.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['i'] != null) {
+                    $name = $_POST['i'];
                 } else {
                     $name = "*";
                 }
@@ -591,11 +600,11 @@
 
                     echo "</tr>\n";
                 }
-            } else if ($query == "Queries/J.sql") {
+            } else if ($query == "Queries/j.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['j'] != null) {
+                    $name = $_POST['j'];
                 } else {
                     $name = "*";
                 }
@@ -649,12 +658,13 @@
                 }
             } else if ($query == "Queries/k.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
+                */
 
 
                 echo "<h2>Query K</h2>";
@@ -708,12 +718,13 @@
                 }
             } else if ($query == "Queries/l.sql") {
 
-
+                /*
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
                 } else {
                     $name = "*";
                 }
+                */
 
 
                 echo "<h2>Query L</h2>";
@@ -765,8 +776,8 @@
             } else if ($query == "Queries/m.sql") {
 
 
-                if ($_POST['name'] != null) {
-                    $name = $_POST['name'];
+                if ($_POST['m'] != null) {
+                    $name = $_POST['m'];
                 } else {
                     $name = "*";
                 }
@@ -842,6 +853,70 @@
 
                     echo "</tr>\n";
                 }
+            } else if ($query == "Queries/n.sql") {
+
+                /*
+                if ($_POST['name'] != null) {
+                    $name = $_POST['name'];
+                } else {
+                    $name = "*";
+                }
+                */
+
+
+                echo "<h2>Query N</h2>";
+                echo "<p>	Find the names and emails of all raters who gave ratings that are lower than that of a rater with a name 
+	            called John, in terms of the combined rating of Price, Food, Mood and Staff. (Note that there may be more than one rater with this name).</p>";
+                $query = "SELECT rater.name, rater.email
+
+                FROM
+                
+                (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
+                FROM rating
+                GROUP BY 1) AS combinedrating,
+                
+                (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
+                FROM rating, rater
+                WHERE rating.UserID = rater.userid AND rater.name = 'Sugar'
+                GROUP BY 1) AS combinedjohn, RATER
+                
+                WHERE combinedrating.sumrating < combinedjohn.sumrating AND combinedrating.userid = rater.userid;";
+
+                echo "<code>$query</code>";
+                echo "<h2>$type</h2>\n";
+                echo "<table class='table'>\n";
+                echo "<thead>\n";
+                echo "<tr>\n";
+                echo "<th scope=\"col\">Rater Name</th>\n";
+                echo "<th scope=\"col\">Rater Email</th>\n";
+
+                echo "</tr>\n";
+                echo "</thead>\n";
+                echo "<tbody>\n";
+                $results = pg_query("SELECT rater.name, rater.email
+
+                FROM
+                
+                (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
+                FROM rating
+                GROUP BY 1) AS combinedrating,
+                
+                (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
+                FROM rating, rater
+                WHERE rating.UserID = rater.userid AND rater.name = 'Sugar'
+                GROUP BY 1) AS combinedjohn, RATER
+                
+                WHERE combinedrating.sumrating < combinedjohn.sumrating AND combinedrating.userid = rater.userid;") or die('Query failed: ' . pg_last_error());
+                while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
+                    $name = $result['name'];
+                    $email = $result['email'];
+
+                    echo "<tr>\n";
+                    echo "<td>$name</td>\n";
+                    echo "<td>$email</td>\n";
+
+                    echo "</tr>\n";
+                }
             }
 
         } else {
@@ -858,7 +933,7 @@
             echo "Enter Restaurant Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='a' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/a.sql'>A</button>\n";
@@ -871,7 +946,7 @@
             echo "Enter Restaurant Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='b' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/b.sql'>B</button>\n";
@@ -884,7 +959,7 @@
             echo "Enter Restaurant Category:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='c' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/c.sql'>C</button>\n";
@@ -897,7 +972,7 @@
             echo "Enter Restaurant Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='d' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/d.sql'>D</button>\n";
@@ -943,7 +1018,7 @@
             echo "Enter Rater Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='h' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/h.sql'>H</button>\n";
@@ -956,7 +1031,7 @@
             echo "Enter Restaurant Type:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='i' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/i.sql'>I</button>\n";
@@ -969,7 +1044,7 @@
             echo "Enter Restaurant Type:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='j' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/J.sql'>J</button>\n";
@@ -1009,23 +1084,22 @@
             echo "Enter Restaurant Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "<input type='text' name='m' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/m.sql'>M</button>\n";
             echo "<br>";
             echo "<br>";
 
-            echo "<p>M) Most Frequent Raters:</p>";
+            echo "<p>N) Ratings Lower then Rater John:</p>";
             echo "<div class='row'>\n";
             echo "<div class='col-md-3'>\n";
-            echo "Enter Restaurant Name:\n";
+            echo "Enter Rater Name:\n";
             echo "</div>\n";
             echo "<div class='col-md-3'>\n";
-            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
-            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/m.sql'>M</button>\n";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/n.sql'>N</button>\n";
             echo "<br>";
             echo "<br>";
 
