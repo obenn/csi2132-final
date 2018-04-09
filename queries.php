@@ -51,6 +51,7 @@
         if ($_POST['query'] != null) {
             $query = $_POST['query'];
             include 'connection.php';
+
             if ($query == "Queries/a.sql") {
                 if ($_POST['name'] != null) {
                     $name = $_POST['name'];
@@ -60,8 +61,7 @@
                 echo "<h2>Query A</h2>";
                 echo "<p>Display all the information about a user‐specified restaurant. That is, the user should select the
 	            name of the restaurant from a list, and the information as contained in the restaurant and
-	            location tables should then displayed on the screen.
-	            If no name is specified output all</p>";
+	            location tables should then displayed on the screen.</p>";
                 $query = file_get_contents($query)."'$name'";
                 echo "<code>$query</code>";
                 echo "<h2>$type</h2>\n";
@@ -104,31 +104,83 @@
                     echo "</tr>\n";
                 }
             }
+            if ($query == "Queries/b.sql") {
+
+
+                if ($_POST['name'] != null) {
+                    $name = $_POST['name'];
+                } else {
+                    $name = "*";
+                }
+
+
+                echo "<h2>Query B</h2>";
+                echo "<p>Display the full menu of a specific restaurant. That is, the user should select the name of the
+	            restaurant from a list, and all menu items, together with their prices, should be displayed on the
+	            screen. The menu should be displayed based on menu item categories.</p>";
+                $query = file_get_contents($query)."'$name'";
+
+                echo "<code>$query</code>";
+                echo "<h2>$type</h2>\n";
+                echo "<table class='table'>\n";
+                echo "<thead>\n";
+                echo "<tr>\n";
+                echo "<th scope=\"col\">Name</th>\n";
+                echo "<th scope=\"col\">Type</th>\n";
+
+                echo "</tr>\n";
+                echo "</thead>\n";
+                echo "<tbody>\n";
+                $results = pg_query("SELECT menuitem.name, menuitem.type, menuitem.category, menuitem.description
+                FROM menuitem
+                INNER JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
+                WHERE restaurant.name = '$name'
+                ORDER BY menuitem.category DESC") or die('Query failed: ' . pg_last_error());
+                while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
+                    $name = $result['name'];
+                    $type = $result['type'];
+
+                    echo "<tr>\n";
+                    echo "<td>$name</td>\n";
+                    echo "<td>$type</td>\n";
+                    echo "</tr>\n";
+                }
+            }
 
         } else {
             echo "<h1>Queries</h1>\n";
             echo "<br>";
             echo "<form action='queries.php' method='post'>\n";
+
             echo "\t<h3>Restaurants and Menus</h3>\n";
             echo "<br>";
-            echo "<p>Information about restaurant:</p>";
 
-            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/a.sql'>A</button>\n";
-
+            echo "<p>A) Restaurant Information:</p>";
             echo "<div class='row'>\n";
-            echo "<div class='col-md-4'>\n";
-            echo "Name:\n";
+            echo "<div class='col-md-3'>\n";
+            echo "Enter Restaurant Name:\n";
             echo "</div>\n";
-            echo "<div class='col-md-8'>\n";
+            echo "<div class='col-md-3'>\n";
             echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/a.sql'>A</button>\n";
+            echo "<br>";
+            echo "<br>";
 
-            echo "<br>";
-            echo "<br>";
+            echo "<p>B) Restaurant Menu:</p>";
+            echo "<div class='row'>\n";
+            echo "<div class='col-md-3'>\n";
+            echo "Enter Restaurant Name:\n";
+            echo "</div>\n";
+            echo "<div class='col-md-3'>\n";
+            echo "<input type='text' name='name' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
+            echo "</div>\n";
+            echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/b.sql'>B</button>\n";
             echo "<br>";
             echo "<br>";
+
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/c.sql'>C</button>\n";
             echo "<br>";
             echo "<br>";
@@ -177,7 +229,7 @@
             echo "<br>";
             echo "<br>";
             echo "</form>\n";
-            echo "<a class='btn btn-lg btn-light' href='adminer.php' role='butto'>Log into Adminer &raquo;</a>";
+            echo "<a class='btn btn-lg btn-light' href='adminer.php?pgsql=&username=postgres&db=postgres&ns=restaurants' role='button'>Log into Adminer &raquo;</a>";
         }
         ?>
     </div>
