@@ -31,7 +31,7 @@
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
+                <a class="nav-link" href="raters.php"><i class="fas fa-pencil-alt"></i> Raters</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
@@ -90,8 +90,8 @@
             echo "<footer class='footer'>";
             echo "<form action=\"info.php\" method=\"post\">\n";
             echo "<button class=\"btn btn-danger\" type=\"submit\" name='id' value=$id>Delete?</button>\n";
-            echo "</footer>";
             echo "</form>";
+            echo "</footer>";
         } else {
             echo "<h1>Select a <a href='restaurants.php'>Restaurant</a></h1>";
             echo "</div>";

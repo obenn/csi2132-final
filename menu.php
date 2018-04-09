@@ -33,7 +33,7 @@
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
+                <a class="nav-link" href="raters.php"><i class="fas fa-pencil-alt"></i> Raters</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
@@ -84,9 +84,10 @@
                     echo "\t\t\t<td><a href=\"menu.php?delete=$itemid\">delete</a></td>\n";
                     echo "\t\t</tr>\n";
                 }
+                echo "\t</tbody>\n";
+                echo "</table>\n";
             }
-            echo "\t</tbody>\n";
-            echo "</table>\n";
+
             $exp = pg_query("
                     SELECT menuitem.name, location.managername, location.houropen, restaurant.url
                     FROM menuitem
