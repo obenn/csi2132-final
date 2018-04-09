@@ -383,11 +383,12 @@
                 echo "<h2>Query F</h2>";
                 echo "<p>Find the total number of rating for each restaurant, for each rater. That is, the data should be
 	            grouped by the restaurant, the specific raters and the numeric ratings they have received.</p>";
-                $query = "SELECT restaurant.name, rater.name, COUNT(rating.food) AS number_rating
-                FROM rating
-                JOIN rater ON rating.userid = rater.userid
-                JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
-                GROUP BY 1,2;";
+                $query = "SELECT restaurant.name as restaurant, tmp.name as rater, number_rating FROM
+                (SELECT rating.restaurantid, rater.name, COUNT(rating.food) AS number_rating
+                FROM restaurants.rating
+                JOIN restaurants.rater ON rating.userid = rater.userid
+                GROUP BY rater.name, rating.restaurantid ORDER BY rating.restaurantid) as tmp
+                LEFT OUTER JOIN restaurants.restaurant ON tmp.restaurantid = restaurant.restaurantid";
 
                 echo "<code>$query</code>";
                 echo "<h2>$type</h2>\n";
@@ -401,19 +402,15 @@
                 echo "</tr>\n";
                 echo "</thead>\n";
                 echo "<tbody>\n";
-                $results = pg_query("SELECT restaurant.name, rater.name, COUNT(rating.food) AS number_rating
-                FROM rating
-                JOIN rater ON rating.userid = rater.userid
-                JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
-                GROUP BY 1,2;") or die('Query failed: ' . pg_last_error());
+                $results = pg_query($query) or die('Query failed: ' . pg_last_error());
                 while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
-                    $name = $result['restaurant.name'];
-                    $name = $result['rater.name'];
+                    $name = $result['restaurant'];
+                    $rater = $result['rater'];
                     $number_rating = $result['number_rating'];
 
                     echo "<tr>\n";
                     echo "<td>$name</td>\n";
-                    echo "<td>$name</td>\n";
+                    echo "<td>$rater</td>\n";
                     echo "<td>$number_rating</td>\n";
 
                     echo "</tr>\n";
