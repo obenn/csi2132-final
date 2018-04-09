@@ -915,6 +915,58 @@
 
                     echo "</tr>\n";
                 }
+            } else if ($query == "Queries/o.sql") {
+
+                /*
+                if ($_POST['name'] != null) {
+                    $name = $_POST['name'];
+                } else {
+                    $name = "*";
+                }
+                */
+
+
+                echo "<h2>Query O</h2>";
+                echo "<p>	Find the names, types and emails of the raters that provide the most diverse ratings. Display this information together 
+                with the restaurants names and the ratings. For example, Jane Doe may have rated the Food at the Imperial Palace restaurant 
+                as a 1 on 1 January 2015, as a 5 on 15 January 2015, and a 3 on 4 February 2015. Clearly, she changes her mind quite often.</p>";
+                $query = "SELECT DISTINCT rater.name, rater.type, rater.email
+                FROM rating, rater
+                WHERE rating.UserID = rater.UserID AND RATING.userid IN (SELECT DISTINCT rating.UserID FROM rating, RESTAURANT WHERE rating.RestaurantID = restaurant.RestaurantID AND rating.food = 10 ORDER BY rating.UserID) AND
+                      rating.userid IN (SELECT DISTINCT rating.UserID FROM rating, RESTAURANT WHERE
+                        rating.RestaurantID = restaurant.RestaurantID AND rating.food = 1 ORDER BY rating.UserID)
+                ORDER BY rater.name;";
+
+                echo "<code>$query</code>";
+                echo "<h2>$type</h2>\n";
+                echo "<table class='table'>\n";
+                echo "<thead>\n";
+                echo "<tr>\n";
+                echo "<th scope=\"col\">Rater Name</th>\n";
+                echo "<th scope=\"col\">Rater Type</th>\n";
+                echo "<th scope=\"col\">Rater Email</th>\n";
+
+                echo "</tr>\n";
+                echo "</thead>\n";
+                echo "<tbody>\n";
+                $results = pg_query("SELECT DISTINCT rater.name, rater.type, rater.email
+                FROM rating, rater
+                WHERE rating.UserID = rater.UserID AND RATING.userid IN (SELECT DISTINCT rating.UserID FROM rating, RESTAURANT WHERE rating.RestaurantID = restaurant.RestaurantID AND rating.food = 10 ORDER BY rating.UserID) AND
+                      rating.userid IN (SELECT DISTINCT rating.UserID FROM rating, RESTAURANT WHERE
+                        rating.RestaurantID = restaurant.RestaurantID AND rating.food = 1 ORDER BY rating.UserID)
+                ORDER BY rater.name;") or die('Query failed: ' . pg_last_error());
+                while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
+                    $name = $result['name'];
+                    $type = $result['type'];
+                    $email = $result['email'];
+
+                    echo "<tr>\n";
+                    echo "<td>$name</td>\n";
+                    echo "<td>$type</td>\n";
+                    echo "<td>$email</td>\n";
+
+                    echo "</tr>\n";
+                }
             }
 
         } else {
@@ -1101,9 +1153,18 @@
             echo "<br>";
             echo "<br>";
 
+            echo "<p>O) Most Diverse Rating:</p>";
+            echo "<div class='row'>\n";
+            echo "<div class='col-md-3'>\n";
+            echo "Entry not required:\n";
+            echo "</div>\n";
+            echo "<div class='col-md-3'>\n";
+            echo "</div>\n";
+            echo "</div>\n";
             echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/o.sql'>O</button>\n";
             echo "<br>";
             echo "<br>";
+
             echo "<br>";
             echo "<br>";
             echo "<br>";
