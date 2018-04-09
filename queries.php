@@ -875,7 +875,7 @@
                 
                 (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
                 FROM rating, rater
-                WHERE rating.UserID = rater.userid AND rater.name = 'Sugar'
+                WHERE rating.UserID = rater.userid AND rater.name = 'John'
                 GROUP BY 1) AS combinedjohn, RATER
                 
                 WHERE combinedrating.sumrating < combinedjohn.sumrating AND combinedrating.userid = rater.userid;";
@@ -901,7 +901,7 @@
                 
                 (SELECT rating.userid, (SUM(rating.price) + SUM(rating.food) + SUM(rating.mood) + SUM(rating.staff)) AS sumrating
                 FROM rating, rater
-                WHERE rating.UserID = rater.userid AND rater.name = 'Sugar'
+                WHERE rating.UserID = rater.userid AND rater.name = 'John'
                 GROUP BY 1) AS combinedjohn, RATER
                 
                 WHERE combinedrating.sumrating < combinedjohn.sumrating AND combinedrating.userid = rater.userid;") or die('Query failed: ' . pg_last_error());
