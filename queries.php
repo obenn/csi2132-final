@@ -128,7 +128,7 @@
                 FROM menuitem
                 INNER JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
                 WHERE restaurant.name = '$name'
-                ORDER BY menuitem.category DESC";
+                ORDER BY menuitem.category DESC;";
 
                 echo "<code>$query</code>";
                 echo "<h2>$type</h2>\n";
@@ -147,7 +147,7 @@
                 FROM menuitem
                 INNER JOIN restaurant ON menuitem.restaurantid = restaurant.restaurantid
                 WHERE restaurant.name = '$name'
-                ORDER BY menuitem.category DESC") or die('Query failed: ' . pg_last_error());
+                ORDER BY menuitem.category DESC;") or die('Query failed: ' . pg_last_error());
                 while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
                     $name = $result['name'];
                     $type = $result['type'];
