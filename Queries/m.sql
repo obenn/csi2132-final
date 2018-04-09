@@ -11,7 +11,8 @@ FROM (
        FROM 	  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                 FROM rating
                   JOIN rater ON rating.userid = rater.userid
-                WHERE rating.restaurantid = 1 /* $$$ */
+                  JOIN restaurant ON rating.RestaurantID = RESTAURANT.RestaurantID
+                WHERE RESTAURANT.name = 'Ottawa Pizza House' /* $$$ */
                 GROUP BY 1, rating.restaurantid) AS tmp, rater, rating, menuitem, ratingitem
        WHERE tmp.smu IN (SELECT MAX(tmp.smu) FROM  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                                                     FROM rating

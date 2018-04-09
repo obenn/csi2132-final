@@ -610,7 +610,7 @@
                 }
 
 
-                echo "<h2>Query I</h2>";
+                echo "<h2>Query J</h2>";
                 echo "<p>	Provide a query to determine whether Type Y restaurants are “more popular” than other restaurants. 
                 (Here, Type Y refers to any restaurant type of your choice, e.g. Indian or Burger.) Yes, this query 
                 is open to your own interpretation!</p>";
@@ -826,7 +826,8 @@
                   FROM 	  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                           FROM rating
                           JOIN rater ON rating.userid = rater.userid
-                          WHERE rating.restaurantid = 1 /* $$$ */
+                          JOIN restaurant ON rating.RestaurantID = RESTAURANT.RestaurantID
+                          WHERE RESTAURANT.name = '$name'
                           GROUP BY 1, rating.restaurantid) AS tmp, rater, rating, menuitem, ratingitem
                   WHERE tmp.smu IN (SELECT MAX(tmp.smu) FROM  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                                                               FROM rating
@@ -1047,7 +1048,7 @@
             echo "<input type='text' name='j' pattern='^[a-zA-Z0-9' ]+$' title='Accepted characters only'><br>\n";
             echo "</div>\n";
             echo "</div>\n";
-            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/J.sql'>J</button>\n";
+            echo "\t<button type='submit' class='btn btn-lg btn-light' name='query' value='Queries/j.sql'>J</button>\n";
             echo "<br>";
             echo "<br>";
 
