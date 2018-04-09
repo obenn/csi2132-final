@@ -25,16 +25,10 @@ JOIN rater ON tablefoodavg.userid = rater.userid
 JOIN rating ON tablefoodavg.userid = rating.userid
 JOIN restaurant ON rating.userid = restaurant.restaurantid;
 */
-SELECT rater.name, rater.reputation, restaurant.name, rating.date
+SELECT rater.name AS raname, rater.reputation, restaurant.name AS rename, rating.date
 FROM rating
-JOIN rater ON rater.userid = rating.userid
-JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
+	JOIN rater ON rater.userid = rating.userid
+	JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
 WHERE rating.food IN 	(SELECT MAX(rating.food)
-			FROM rating);
-
-SELECT rater.name, rater.reputation, restaurant.name, rating.date
-FROM rating
-JOIN rater ON rater.userid = rating.userid
-JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
-WHERE rating.mood IN 	(SELECT MAX(rating.mood)
-			FROM rating);
+											 FROM rating) AND rating.mood IN (SELECT MAX(rating.mood)
+																												FROM rating);

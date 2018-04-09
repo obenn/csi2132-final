@@ -126,197 +126,197 @@ INSERT INTO RESTAURANT
 	VALUES (12,'Salad Bar','american','www.saladbar.ca');
 
 INSERT INTO RATING
-	VALUES (1,'2017-5-1',4,2,1,5,'X',1);
+VALUES (1,'2017-5-1',3,4,1,2,'I got to meet the owner',1);
 INSERT INTO RATING
-	VALUES (2,'2017-5-2',3,4,3,2,'X',2);
+VALUES (2,'2017-5-2',2,4,5,2,'Restaurant has no windows',2);
 INSERT INTO RATING
-	VALUES (3,'2017-5-3',2,3,3,4,'X',3);
+VALUES (3,'2017-5-3',3,2,1,4,'They should add cheese even if cheese is not an ingredient',3);
 INSERT INTO RATING
-	VALUES (4,'2017-5-4',4,3,2,4,'X',4);
+VALUES (4,'2017-5-4',5,3,1,5,'This place is da bomb',4);
 INSERT INTO RATING
-	VALUES (5,'2017-5-5',4,4,3,5,'X',5);
+VALUES (5,'2017-5-5',1,4,5,2,'Such exotic flavours. Such wow.',5);
 INSERT INTO RATING
-	VALUES (6,'2017-5-6',2,1,3,1,'X',6);
+VALUES (6,'2017-5-6',4,2,4,1,'I like food. They have it here.',6);
 INSERT INTO RATING
-	VALUES (7,'2017-5-7',2,1,2,4,'X',7);
+VALUES (7,'2017-5-7',2,3,3,4,'This place is BAWLIN yo',7);
 INSERT INTO RATING
-	VALUES (8,'2017-5-8',3,1,2,5,'X',8);
+VALUES (8,'2017-5-8',4,3,5,1,'There was chickens next to the patio',8);
 INSERT INTO RATING
-	VALUES (9,'2017-5-9',2,3,4,5,'X',9);
+VALUES (9,'2017-5-9',1,1,3,5,'There werent enough ice cubes in my drink',9);
 INSERT INTO RATING
-	VALUES (10,'2017-5-10',1,5,4,1,'X',10);
+VALUES (10,'2017-5-10',2,1,4,2,'They ran out of water',10);
 INSERT INTO RATING
-	VALUES (11,'2017-5-11',4,4,4,1,'X',11);
+VALUES (11,'2017-5-11',5,5,1,4,'The cutlery was so amazing',11);
 INSERT INTO RATING
-	VALUES (12,'2017-5-12',2,2,2,2,'X',12);
+VALUES (12,'2017-5-12',3,3,2,4,'More food please',12);
 INSERT INTO RATING
-	VALUES (13,'2017-5-13',2,4,4,4,'X',1);
+VALUES (13,'2017-5-13',1,3,2,3,'Hint of smoke in the air',1);
 INSERT INTO RATING
-	VALUES (14,'2017-5-14',5,3,4,5,'X',2);
+VALUES (14,'2017-5-14',2,3,2,5,'Fantastic!',2);
 INSERT INTO RATING
-	VALUES (15,'2017-5-15',2,5,2,1,'X',3);
+VALUES (15,'2017-5-15',3,3,4,2,'Finger licking good',3);
 INSERT INTO RATING
-	VALUES (1,'2017-5-16',4,5,5,1,'X',4);
+VALUES (1,'2017-5-16',1,5,2,2,'Great',4);
 INSERT INTO RATING
-	VALUES (2,'2017-5-17',3,2,3,4,'X',5);
+VALUES (2,'2017-5-17',1,2,5,3,'Scrumptious',5);
 INSERT INTO RATING
-	VALUES (3,'2017-5-18',3,4,1,4,'X',6);
+VALUES (3,'2017-5-18',1,5,3,2,'Limited parking',6);
 INSERT INTO RATING
-	VALUES (4,'2017-5-19',4,5,5,3,'X',7);
+VALUES (4,'2017-5-19',2,3,1,2,'Everything is awesome',7);
 INSERT INTO RATING
-	VALUES (5,'2017-5-20',3,5,2,5,'X',8);
+VALUES (5,'2017-5-20',3,5,5,1,'I got to meet the owner',8);
 INSERT INTO RATING
-	VALUES (6,'2017-5-21',2,5,2,4,'X',9);
+VALUES (6,'2017-5-21',2,2,1,2,'Restaurant has no windows',9);
 INSERT INTO RATING
-	VALUES (7,'2017-5-22',5,3,1,2,'X',10);
+VALUES (7,'2017-5-22',1,5,2,1,'They should add cheese even if cheese is not an ingredient',10);
 INSERT INTO RATING
-	VALUES (8,'2017-5-23',2,3,1,2,'X',11);
+VALUES (8,'2017-5-23',4,3,4,4,'This place is da bomb',11);
 INSERT INTO RATING
-	VALUES (9,'2017-5-24',2,1,4,4,'X',12);
+VALUES (9,'2017-5-24',2,1,1,1,'Such exotic flavours. Such wow.',12);
 INSERT INTO RATING
-	VALUES (10,'2017-5-25',1,5,3,2,'X',1);
+VALUES (10,'2017-5-25',1,5,2,2,'I like food. They have it here.',1);
 INSERT INTO RATING
-	VALUES (11,'2017-5-26',5,3,4,4,'X',2);
+VALUES (11,'2017-5-26',3,3,1,3,'This place is BAWLIN yo',2);
 INSERT INTO RATING
-	VALUES (12,'2017-5-27',1,3,4,2,'X',3);
+VALUES (12,'2017-5-27',2,4,2,3,'There was chickens next to the patio',3);
 INSERT INTO RATING
-	VALUES (13,'2017-5-28',2,4,3,4,'X',4);
+VALUES (13,'2017-5-28',5,4,1,3,'There werent enough ice cubes in my drink',4);
 INSERT INTO RATING
-	VALUES (14,'2017-6-1',2,1,2,2,'X',5);
+VALUES (14,'2017-6-1',1,3,5,5,'They ran out of water',5);
 INSERT INTO RATING
-	VALUES (15,'2017-6-2',5,3,3,3,'X',6);
+VALUES (15,'2017-6-2',3,2,4,2,'The cutlery was so amazing',6);
 INSERT INTO RATING
-	VALUES (1,'2017-6-3',5,3,1,2,'X',7);
+VALUES (1,'2017-6-3',5,2,1,5,'More food please',7);
 INSERT INTO RATING
-	VALUES (2,'2017-6-4',3,1,3,2,'X',8);
+VALUES (2,'2017-6-4',5,5,3,4,'Hint of smoke in the air',8);
 INSERT INTO RATING
-	VALUES (3,'2017-6-5',5,5,2,5,'X',9);
+VALUES (3,'2017-6-5',3,1,1,4,'Fantastic!',9);
 INSERT INTO RATING
-	VALUES (4,'2017-6-6',4,3,2,4,'X',10);
+VALUES (4,'2017-6-6',5,1,5,1,'Finger licking good',10);
 INSERT INTO RATING
-	VALUES (5,'2017-6-7',2,3,1,2,'X',11);
+VALUES (5,'2017-6-7',4,1,4,2,'Great',11);
 INSERT INTO RATING
-	VALUES (6,'2017-6-8',1,3,5,1,'X',12);
+VALUES (6,'2017-6-8',4,2,5,2,'Scrumptious',12);
 INSERT INTO RATING
-	VALUES (7,'2017-6-9',3,3,4,1,'X',1);
+VALUES (7,'2017-6-9',5,1,3,1,'Limited parking',1);
 INSERT INTO RATING
-	VALUES (8,'2017-6-10',3,4,3,1,'X',2);
+VALUES (8,'2017-6-10',1,3,1,5,'Everything is awesome',2);
 INSERT INTO RATING
-	VALUES (9,'2017-6-11',1,2,1,5,'X',3);
+VALUES (9,'2017-6-11',4,1,3,4,'I got to meet the owner',3);
 INSERT INTO RATING
-	VALUES (10,'2017-6-12',4,2,1,1,'X',4);
+VALUES (10,'2017-6-12',4,3,1,4,'Restaurant has no windows',4);
 INSERT INTO RATING
-	VALUES (11,'2017-6-13',2,1,4,2,'X',5);
+VALUES (11,'2017-6-13',5,1,4,4,'They should add cheese even if cheese is not an ingredient',5);
 INSERT INTO RATING
-	VALUES (12,'2017-6-14',4,4,3,3,'X',6);
+VALUES (12,'2017-6-14',3,4,1,2,'This place is da bomb',6);
 INSERT INTO RATING
-	VALUES (13,'2017-6-15',4,3,1,2,'X',7);
+VALUES (13,'2017-6-15',2,5,3,2,'Such exotic flavours. Such wow.',7);
 INSERT INTO RATING
-	VALUES (14,'2017-6-16',1,1,4,5,'X',8);
+VALUES (14,'2017-6-16',5,2,4,5,'I like food. They have it here.',8);
 INSERT INTO RATING
-	VALUES (15,'2017-6-17',2,5,2,5,'X',9);
+VALUES (15,'2017-6-17',1,4,3,2,'This place is BAWLIN yo',9);
 INSERT INTO RATING
-	VALUES (1,'2017-6-18',4,5,2,5,'X',10);
+VALUES (1,'2017-6-18',3,4,3,1,'There was chickens next to the patio',10);
 INSERT INTO RATING
-	VALUES (2,'2017-6-19',4,4,5,5,'X',11);
+VALUES (2,'2017-6-19',3,1,4,2,'There werent enough ice cubes in my drink',11);
 INSERT INTO RATING
-	VALUES (3,'2017-6-20',2,5,5,5,'X',12);
+VALUES (3,'2017-6-20',4,1,4,1,'They ran out of water',12);
 INSERT INTO RATING
-	VALUES (4,'2017-6-21',3,2,2,2,'X',1);
+VALUES (4,'2017-6-21',1,5,4,3,'The cutlery was so amazing',1);
 INSERT INTO RATING
-	VALUES (5,'2017-6-22',3,2,3,2,'X',2);
+VALUES (5,'2017-6-22',1,2,5,1,'More food please',2);
 INSERT INTO RATING
-	VALUES (6,'2017-6-23',5,4,4,2,'X',3);
+VALUES (6,'2017-6-23',1,2,4,1,'Hint of smoke in the air',3);
 INSERT INTO RATING
-	VALUES (7,'2017-6-24',5,3,3,5,'X',4);
+VALUES (7,'2017-6-24',1,3,3,2,'Fantastic!',4);
 INSERT INTO RATING
-	VALUES (8,'2017-6-25',5,5,1,5,'X',5);
+VALUES (8,'2017-6-25',2,1,5,1,'Finger licking good',5);
 INSERT INTO RATING
-	VALUES (9,'2017-6-26',2,4,4,5,'X',6);
+VALUES (9,'2017-6-26',4,2,4,3,'Great',6);
 INSERT INTO RATING
-	VALUES (10,'2017-6-27',3,4,3,4,'X',7);
+VALUES (10,'2017-6-27',1,2,3,3,'Scrumptious',7);
 INSERT INTO RATING
-	VALUES (11,'2017-6-28',3,3,5,4,'X',8);
+VALUES (11,'2017-6-28',2,4,2,1,'Limited parking',8);
 INSERT INTO RATING
-	VALUES (12,'2017-7-1',2,3,3,3,'X',9);
+VALUES (12,'2017-7-1',3,1,1,4,'Everything is awesome',9);
 INSERT INTO RATING
-	VALUES (13,'2017-7-2',5,1,1,4,'X',10);
+VALUES (13,'2017-7-2',5,4,3,2,'I got to meet the owner',10);
 INSERT INTO RATING
-	VALUES (14,'2017-7-3',4,2,3,1,'X',11);
+VALUES (14,'2017-7-3',4,4,3,3,'Restaurant has no windows',11);
 INSERT INTO RATING
-	VALUES (15,'2017-7-4',3,4,4,1,'X',12);
+VALUES (15,'2017-7-4',2,4,5,3,'They should add cheese even if cheese is not an ingredient',12);
 INSERT INTO RATING
-	VALUES (1,'2017-7-5',4,4,3,3,'X',1);
+VALUES (1,'2017-7-5',5,2,1,5,'This place is da bomb',1);
 INSERT INTO RATING
-	VALUES (2,'2017-7-6',4,3,1,4,'X',2);
+VALUES (2,'2017-7-6',2,2,2,4,'Such exotic flavours. Such wow.',2);
 INSERT INTO RATING
-	VALUES (3,'2017-7-7',3,3,1,2,'X',3);
+VALUES (3,'2017-7-7',2,5,2,5,'I like food. They have it here.',3);
 INSERT INTO RATING
-	VALUES (4,'2017-7-8',1,4,5,4,'X',4);
+VALUES (4,'2017-7-8',4,4,5,2,'This place is BAWLIN yo',4);
 INSERT INTO RATING
-	VALUES (5,'2017-7-9',3,3,2,3,'X',5);
+VALUES (5,'2017-7-9',4,5,3,5,'There was chickens next to the patio',5);
 INSERT INTO RATING
-	VALUES (6,'2017-7-10',2,4,1,4,'X',6);
+VALUES (6,'2017-7-10',2,1,5,2,'There werent enough ice cubes in my drink',6);
 INSERT INTO RATING
-	VALUES (7,'2017-7-11',5,2,4,2,'X',7);
+VALUES (7,'2017-7-11',4,1,5,5,'They ran out of water',7);
 INSERT INTO RATING
-	VALUES (8,'2017-7-12',4,2,5,1,'X',8);
+VALUES (8,'2017-7-12',1,3,1,2,'The cutlery was so amazing',8);
 INSERT INTO RATING
-	VALUES (9,'2017-7-13',4,1,2,1,'X',9);
+VALUES (9,'2017-7-13',1,4,4,2,'More food please',9);
 INSERT INTO RATING
-	VALUES (10,'2017-7-14',4,3,4,1,'X',10);
+VALUES (10,'2017-7-14',5,5,2,3,'Hint of smoke in the air',10);
 INSERT INTO RATING
-	VALUES (11,'2017-7-15',2,2,4,2,'X',11);
+VALUES (11,'2017-7-15',1,5,4,4,'Fantastic!',11);
 INSERT INTO RATING
-	VALUES (12,'2017-7-16',5,4,3,3,'X',12);
+VALUES (12,'2017-7-16',1,2,1,4,'Finger licking good',12);
 INSERT INTO RATING
-	VALUES (13,'2017-7-17',3,1,4,3,'X',1);
+VALUES (13,'2017-7-17',2,5,1,2,'Great',1);
 INSERT INTO RATING
-	VALUES (14,'2017-7-18',4,3,3,3,'X',2);
+VALUES (14,'2017-7-18',3,4,4,2,'Scrumptious',2);
 INSERT INTO RATING
-	VALUES (15,'2017-7-19',5,4,5,3,'X',3);
+VALUES (15,'2017-7-19',5,4,2,5,'Limited parking',3);
 INSERT INTO RATING
-	VALUES (1,'2017-7-20',4,3,3,4,'X',4);
+VALUES (1,'2017-7-20',4,1,2,4,'Everything is awesome',4);
 INSERT INTO RATING
-	VALUES (2,'2017-7-21',4,5,2,2,'X',5);
+VALUES (2,'2017-7-21',3,1,2,2,'I got to meet the owner',5);
 INSERT INTO RATING
-	VALUES (3,'2017-7-22',4,5,1,3,'X',6);
+VALUES (3,'2017-7-22',5,3,2,2,'Restaurant has no windows',6);
 INSERT INTO RATING
-	VALUES (4,'2017-7-23',4,5,4,3,'X',7);
+VALUES (4,'2017-7-23',5,1,3,3,'They should add cheese even if cheese is not an ingredient',7);
 INSERT INTO RATING
-	VALUES (5,'2017-7-24',2,1,1,1,'X',8);
+VALUES (5,'2017-7-24',4,5,4,3,'This place is da bomb',8);
 INSERT INTO RATING
-	VALUES (6,'2017-7-25',3,4,3,2,'X',9);
+VALUES (6,'2017-7-25',3,3,1,1,'Such exotic flavours. Such wow.',9);
 INSERT INTO RATING
-	VALUES (7,'2017-7-26',5,5,3,2,'X',10);
+VALUES (7,'2017-7-26',2,4,1,5,'I like food. They have it here.',10);
 INSERT INTO RATING
-	VALUES (8,'2017-7-27',1,4,5,3,'X',11);
+VALUES (8,'2017-7-27',4,5,4,3,'This place is BAWLIN yo',11);
 INSERT INTO RATING
-	VALUES (9,'2017-7-28',2,3,5,3,'X',12);
+VALUES (9,'2017-7-28',5,3,2,4,'There was chickens next to the patio',12);
 INSERT INTO RATING
-	VALUES (10,'2017-8-1',5,3,5,3,'X',1);
+VALUES (10,'2017-8-1',5,3,1,5,'There werent enough ice cubes in my drink',1);
 INSERT INTO RATING
-	VALUES (11,'2017-8-2',5,3,4,2,'X',2);
+VALUES (11,'2017-8-2',2,5,1,4,'They ran out of water',2);
 INSERT INTO RATING
-	VALUES (12,'2017-8-3',2,3,3,3,'X',3);
+VALUES (12,'2017-8-3',5,3,5,5,'The cutlery was so amazing',3);
 INSERT INTO RATING
-	VALUES (13,'2017-8-4',5,4,5,4,'X',4);
+VALUES (13,'2017-8-4',3,1,3,3,'More food please',4);
 INSERT INTO RATING
-	VALUES (14,'2017-8-5',1,1,3,3,'X',5);
+VALUES (14,'2017-8-5',2,1,1,4,'Hint of smoke in the air',5);
 INSERT INTO RATING
-	VALUES (15,'2017-8-6',1,2,1,4,'X',6);
+VALUES (15,'2017-8-6',2,5,2,3,'Fantastic!',6);
 INSERT INTO RATING
-	VALUES (1,'2017-8-7',3,5,2,4,'X',7);
+VALUES (1,'2017-8-7',1,1,1,4,'Finger licking good',7);
 INSERT INTO RATING
-	VALUES (2,'2017-8-8',2,2,2,1,'X',8);
+VALUES (2,'2017-8-8',5,5,2,5,'Great',8);
 INSERT INTO RATING
-	VALUES (3,'2017-8-9',3,1,3,1,'X',9);
+VALUES (3,'2017-8-9',2,2,5,5,'Scrumptious',9);
 INSERT INTO RATING
-	VALUES (4,'2017-8-10',1,2,2,2,'X',10);
+VALUES (4,'2017-8-10',5,1,2,2,'Limited parking',10);
 INSERT INTO RATING
-	VALUES (5,'2017-8-11',1,5,3,2,'X',11);
+VALUES (5,'2017-8-11',5,3,1,3,'Everything is awesome',11);
 INSERT INTO RATING
-	VALUES (6,'2017-8-12',2,4,1,4,'X',12);
+VALUES (6,'2017-8-12',5,2,3,3,'I got to meet the owner',12);
 
 INSERT INTO LOCATION
 	VALUES (1,'01/01/2016','John','613-111-1111','1 Main St','10:00am','12:00am',1);
@@ -435,194 +435,194 @@ INSERT INTO MENUITEM
 	VALUES (45,'Garlic Lemon Herb','food','main','Slow cooked chicken marinated in garlic, lemon, and fresh herbs served with baked potatoes',16.75,11);
 
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-5-1',2,5,'X');
+VALUES (1,'2017-5-1',2,3,'I got to meet the owner');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-5-2',1,4,'X');
+VALUES (2,'2017-5-2',1,2,'Restaurant has no windows');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-5-3',4,1,'X');
+VALUES (3,'2017-5-3',4,3,'They should add cheese even if cheese is not an ingredient');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-5-4',12,2,'X');
+VALUES (4,'2017-5-4',12,5,'This place is da bomb');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-5-5',5,3,'X');
+VALUES (5,'2017-5-5',5,4,'Such exotic flavours. Such wow.');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-5-6',29,2,'X');
+VALUES (6,'2017-5-6',29,4,'I like food. They have it here.');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-5-7',31,1,'X');
+VALUES (7,'2017-5-7',31,4,'This place is BAWLIN yo');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-5-8',3,2,'X');
+VALUES (8,'2017-5-8',3,5,'There was chickens next to the patio');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-5-9',28,2,'X');
+VALUES (9,'2017-5-9',28,4,'There werent enough ice cubes in my drink');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-5-10',9,1,'X');
+VALUES (10,'2017-5-10',9,2,'They ran out of water');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-5-11',44,1,'X');
+VALUES (11,'2017-5-11',44,1,'The cutlery was so amazing');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-5-12',6,5,'X');
+VALUES (12,'2017-5-12',6,2,'More food please');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-5-13',17,5,'X');
+VALUES (13,'2017-5-13',17,3,'Hint of smoke in the air');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-5-14',37,1,'X');
+VALUES (14,'2017-5-14',37,2,'Fantastic!');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-5-15',14,3,'X');
+VALUES (15,'2017-5-15',14,4,'Finger licking good');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-5-16',13,1,'X');
+VALUES (1,'2017-5-16',13,5,'Great');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-5-17',22,3,'X');
+VALUES (2,'2017-5-17',22,4,'Scrumptious');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-5-18',30,3,'X');
+VALUES (3,'2017-5-18',30,4,'Limited parking');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-5-19',32,4,'X');
+VALUES (4,'2017-5-19',32,1,'Everything is awesome');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-5-20',8,3,'X');
+VALUES (5,'2017-5-20',8,4,'I got to meet the owner');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-5-21',41,3,'X');
+VALUES (6,'2017-5-21',41,4,'Restaurant has no windows');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-5-22',42,4,'X');
+VALUES (7,'2017-5-22',42,4,'They should add cheese even if cheese is not an ingredient');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-5-23',45,4,'X');
+VALUES (8,'2017-5-23',45,1,'This place is da bomb');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-5-24',7,5,'X');
+VALUES (9,'2017-5-24',7,5,'Such exotic flavours. Such wow.');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-5-25',18,5,'X');
+VALUES (10,'2017-5-25',18,3,'I like food. They have it here.');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-5-26',38,5,'X');
+VALUES (11,'2017-5-26',38,4,'This place is BAWLIN yo');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-5-27',15,3,'X');
+VALUES (12,'2017-5-27',15,5,'There was chickens next to the patio');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-5-28',26,4,'X');
+VALUES (13,'2017-5-28',26,1,'There werent enough ice cubes in my drink');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-6-1',23,3,'X');
+VALUES (14,'2017-6-1',23,2,'They ran out of water');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-6-2',36,1,'X');
+VALUES (15,'2017-6-2',36,2,'The cutlery was so amazing');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-6-3',33,3,'X');
+VALUES (1,'2017-6-3',33,3,'More food please');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-6-4',10,1,'X');
+VALUES (2,'2017-6-4',10,5,'Hint of smoke in the air');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-6-5',28,1,'X');
+VALUES (3,'2017-6-5',28,4,'Fantastic!');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-6-6',43,5,'X');
+VALUES (4,'2017-6-6',43,3,'Finger licking good');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-6-7',44,5,'X');
+VALUES (5,'2017-6-7',44,2,'Great');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-6-8',6,3,'X');
+VALUES (6,'2017-6-8',6,1,'Scrumptious');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-6-9',19,2,'X');
+VALUES (7,'2017-6-9',19,5,'Limited parking');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-6-10',39,3,'X');
+VALUES (8,'2017-6-10',39,3,'Everything is awesome');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-6-11',27,3,'X');
+VALUES (9,'2017-6-11',27,3,'I got to meet the owner');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-6-12',12,4,'X');
+VALUES (10,'2017-6-12',12,2,'Restaurant has no windows');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-6-13',24,2,'X');
+VALUES (11,'2017-6-13',24,5,'They should add cheese even if cheese is not an ingredient');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-6-14',40,3,'X');
+VALUES (12,'2017-6-14',40,5,'This place is da bomb');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-6-15',34,5,'X');
+VALUES (13,'2017-6-15',34,1,'Such exotic flavours. Such wow.');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-6-16',11,5,'X');
+VALUES (14,'2017-6-16',11,2,'I like food. They have it here.');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-6-17',41,2,'X');
+VALUES (15,'2017-6-17',41,5,'This place is BAWLIN yo');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-6-18',9,3,'X');
+VALUES (1,'2017-6-18',9,5,'There was chickens next to the patio');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-6-19',45,2,'X');
+VALUES (2,'2017-6-19',45,4,'There werent enough ice cubes in my drink');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-6-20',7,4,'X');
+VALUES (3,'2017-6-20',7,4,'They ran out of water');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-6-21',20,2,'X');
+VALUES (4,'2017-6-21',20,3,'The cutlery was so amazing');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-6-22',1,3,'X');
+VALUES (5,'2017-6-22',1,3,'More food please');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-6-23',4,4,'X');
+VALUES (6,'2017-6-23',4,5,'Hint of smoke in the air');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-6-24',13,2,'X');
+VALUES (7,'2017-6-24',13,2,'Fantastic!');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-6-25',25,4,'X');
+VALUES (8,'2017-6-25',25,2,'Finger licking good');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-6-26',29,4,'X');
+VALUES (9,'2017-6-26',29,2,'Great');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-6-27',45,1,'X');
+VALUES (10,'2017-6-27',45,2,'Scrumptious');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-6-28',16,3,'X');
+VALUES (11,'2017-6-28',16,4,'Limited parking');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-7-1',28,1,'X');
+VALUES (12,'2017-7-1',28,2,'Everything is awesome');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-7-2',42,3,'X');
+VALUES (13,'2017-7-2',42,1,'I got to meet the owner');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-7-3',44,2,'X');
+VALUES (14,'2017-7-3',44,5,'Restaurant has no windows');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-7-4',6,1,'X');
+VALUES (15,'2017-7-4',6,2,'They should add cheese even if cheese is not an ingredient');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-7-5',21,2,'X');
+VALUES (1,'2017-7-5',21,3,'This place is da bomb');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-7-6',37,4,'X');
+VALUES (2,'2017-7-6',37,4,'Such exotic flavours. Such wow.');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-7-7',14,1,'X');
+VALUES (3,'2017-7-7',14,5,'I like food. They have it here.');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-7-8',26,3,'X');
+VALUES (4,'2017-7-8',26,5,'This place is BAWLIN yo');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-7-9',5,3,'X');
+VALUES (5,'2017-7-9',5,2,'There was chickens next to the patio');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-7-10',30,5,'X');
+VALUES (6,'2017-7-10',30,1,'There werent enough ice cubes in my drink');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-7-11',31,1,'X');
+VALUES (7,'2017-7-11',31,2,'They ran out of water');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-7-12',3,2,'X');
+VALUES (8,'2017-7-12',3,3,'The cutlery was so amazing');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-7-13',41,4,'X');
+VALUES (9,'2017-7-13',41,1,'More food please');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-7-14',43,5,'X');
+VALUES (10,'2017-7-14',43,1,'Hint of smoke in the air');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-7-15',45,4,'X');
+VALUES (11,'2017-7-15',45,1,'Fantastic!');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-7-16',7,2,'X');
+VALUES (12,'2017-7-16',7,3,'Finger licking good');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-7-17',2,1,'X');
+VALUES (13,'2017-7-17',2,2,'Great');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-7-18',38,2,'X');
+VALUES (14,'2017-7-18',38,5,'Scrumptious');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-7-19',15,5,'X');
+VALUES (15,'2017-7-19',15,2,'Limited parking');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-7-20',12,5,'X');
+VALUES (1,'2017-7-20',12,1,'Everything is awesome');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-7-21',22,5,'X');
+VALUES (2,'2017-7-21',22,3,'I got to meet the owner');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-7-22',36,2,'X');
+VALUES (3,'2017-7-22',36,4,'Restaurant has no windows');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-7-23',32,3,'X');
+VALUES (4,'2017-7-23',32,5,'They should add cheese even if cheese is not an ingredient');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-7-24',8,2,'X');
+VALUES (5,'2017-7-24',8,3,'This place is da bomb');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-7-25',28,2,'X');
+VALUES (6,'2017-7-25',28,4,'Such exotic flavours. Such wow.');
 INSERT INTO RATINGITEM
-	VALUES (7,'2017-7-26',9,2,'X');
+VALUES (7,'2017-7-26',9,4,'I like food. They have it here.');
 INSERT INTO RATINGITEM
-	VALUES (8,'2017-7-27',44,2,'X');
+VALUES (8,'2017-7-27',44,2,'This place is BAWLIN yo');
 INSERT INTO RATINGITEM
-	VALUES (9,'2017-7-28',6,5,'X');
+VALUES (9,'2017-7-28',6,5,'There was chickens next to the patio');
 INSERT INTO RATINGITEM
-	VALUES (10,'2017-8-1',17,5,'X');
+VALUES (10,'2017-8-1',17,5,'There werent enough ice cubes in my drink');
 INSERT INTO RATINGITEM
-	VALUES (11,'2017-8-2',39,5,'X');
+VALUES (11,'2017-8-2',39,1,'They ran out of water');
 INSERT INTO RATINGITEM
-	VALUES (12,'2017-8-3',27,4,'X');
+VALUES (12,'2017-8-3',27,3,'The cutlery was so amazing');
 INSERT INTO RATINGITEM
-	VALUES (13,'2017-8-4',13,5,'X');
+VALUES (13,'2017-8-4',13,1,'More food please');
 INSERT INTO RATINGITEM
-	VALUES (14,'2017-8-5',23,5,'X');
+VALUES (14,'2017-8-5',23,1,'Hint of smoke in the air');
 INSERT INTO RATINGITEM
-	VALUES (15,'2017-8-6',40,4,'X');
+VALUES (15,'2017-8-6',40,2,'Fantastic!');
 INSERT INTO RATINGITEM
-	VALUES (1,'2017-8-7',33,3,'X');
+VALUES (1,'2017-8-7',33,2,'Finger licking good');
 INSERT INTO RATINGITEM
-	VALUES (2,'2017-8-8',10,2,'X');
+VALUES (2,'2017-8-8',10,5,'Great');
 INSERT INTO RATINGITEM
-	VALUES (3,'2017-8-9',41,1,'X');
+VALUES (3,'2017-8-9',41,5,'Scrumptious');
 INSERT INTO RATINGITEM
-	VALUES (4,'2017-8-10',42,5,'X');
+VALUES (4,'2017-8-10',42,2,'Limited parking');
 INSERT INTO RATINGITEM
-	VALUES (5,'2017-8-11',45,1,'X');
+VALUES (5,'2017-8-11',45,1,'Everything is awesome');
 INSERT INTO RATINGITEM
-	VALUES (6,'2017-8-12',7,1,'X');
+VALUES (6,'2017-8-12',7,3,'I got to meet the owner');

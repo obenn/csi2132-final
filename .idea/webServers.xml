@@ -2,8 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="b2da6698-0a10-490f-a13f-6d12eed12557" name="db.obenn.ca" url="http://db.obenn.ca">
-        <fileTransfer host="db.obenn.ca" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/var/www/db" accessType="SFTP" keyPair="true">
+      <webServer id="b2da6698-0a10-490f-a13f-6d12eed12557" name="db.obenn.ca" url="http://urbanspork.obenn.ca">
+        <fileTransfer host="urbanspork.obenn.ca" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" rootFolder="/var/www/db" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
