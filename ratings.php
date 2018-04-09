@@ -37,7 +37,7 @@
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
+                <a class="nav-link" href="raters.php"><i class="fas fa-pencil-alt"></i> Raters</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
@@ -72,7 +72,6 @@
         echo "</tr>\n";
         echo "</thead>\n";
         echo "<tbody>\n";
-        $avg_name = 0;
         $avg_price = 0;
         $avg_food = 0;
         $avg_mood = 0;
@@ -82,7 +81,6 @@
         while ($rating = pg_fetch_array($ratings, null, PGSQL_ASSOC)) {
             $userid = $rating['userid'];
             $name = $rating['name'];
-            $avg_name += $name;
             $price = $rating['price'];
             $avg_price += $price;
             $food = $rating['food'];
@@ -95,7 +93,7 @@
             $count++;
 
             echo "<tr>\n";
-            echo "<td><a href='reviewers.php?id={$userid}'>$name</a></td>\n";
+            echo "<td><a href='raters.php?id={$userid}'>$name</a></td>\n";
             echo "<td>$price</td>\n";
             echo "<td>$food</td>\n";
             echo "<td>$mood</td>\n";
@@ -149,7 +147,7 @@
             $count++;
 
             echo "<tr>\n";
-            echo "<td><a href='reviewers.php?id={$userid}'>$rater</a></td>\n";
+            echo "<td><a href='raters.php?id={$userid}'>$rater</a></td>\n";
             echo "<td><a href='menu.php?id={$id}'>$item</a></td>\n";
             echo "<td>$value</td>\n";
             echo "<td>$comment</td>\n";

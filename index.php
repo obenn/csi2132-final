@@ -32,7 +32,7 @@
                 <a class="nav-link" href="ratings.php"><i class="fas fa-thumbs-up"></i> Ratings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="reviewers.php"><i class="fas fa-pencil-alt"></i> Reviewers</a>
+                <a class="nav-link" href="raters.php"><i class="fas fa-pencil-alt"></i> Raters</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="queries.php"><i class="fas fa-database"></i> Queries</a>
@@ -58,7 +58,7 @@
     </div>
     <div class="row">
         <div class="col-sm-3">
-            <h3>Restaurants and Menus</h3>
+            <h3><i class="fas fa-utensils"></i> Restaurants and Menus</h3>
             <p>We provide detailed information about restaurants including their locations, hours and menus.</p>
             <p>Don't see you favorite restaurant? Go ahead and add it, you have full control over our database, what could possibly
             go wrong...</p>
@@ -66,21 +66,21 @@
             <div class="col-xs-12" style="height:50px;"></div>
         </div>
         <div class="col-sm-3">
-            <h3>Ratings and Reviews</h3>
+            <h3><i class="fas fa-thumbs-up"></i> Ratings and Reviews</h3>
             <p>Browse for your next favorite restaurant by looking what others have to say about it.</p>
             <p>This may or may not be PG-13, depending on how much Bill from accounting despised that casserole.</p>
             <p><a href="ratings.php">Checkout ratings for a particular restaurant</a></p>
             <div class="col-xs-12" style="height:50px;"></div>
         </div>
         <div class="col-sm-3">
-            <h3>Raters and reviewers</h3>
+            <h3><i class="fas fa-pencil-alt"></i> Raters and reviewers</h3>
             <p>See who's decided to be an armchair critic by looking through our list of raters and see all their reviews.</p>
             <p>Keep in mind that these are anonymous identites, unless someone really was given the name "Meat Lover" at birth, yikes.</p>
-            <p><a href="reviewers.php">Browse through the reviewers</a></p>
+            <p><a href="reviewers.php">Browse through the raters</a></p>
             <div class="col-xs-12" style="height:50px;"></div>
         </div>
         <div class="col-sm-3">
-            <h3>Queries to the database</h3>
+            <h3><i class="fas fa-database"></i> Queries to the database</h3>
             <p>Checkout a few pre-made queries and their outcomes, it's not like we had to make this for a project or anything...</p>
             <p>If you're feeling adventurous hop into our Admin panel directly, our whole security policy is basically just the reset button down below.</p>
             <p><a href="queries.php">Checkout some queries</a></p>
