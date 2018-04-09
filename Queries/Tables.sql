@@ -7,7 +7,7 @@ CREATE TABLE RATER
 	Name VARCHAR,
 	JoinDate DATE,
 	Type VARCHAR CHECK (type='blog' OR type='online' OR type='food critic'), 
-	Reputation INTEGER CHECK (Reputation>=1 AND Reputation<=5) DEFAULT 1
+	Reputation INTEGER CHECK (Reputation>=1 AND Reputation<=10) DEFAULT 1
 );
 
 CREATE TABLE RESTAURANT
@@ -23,10 +23,10 @@ CREATE TABLE RATING
 	UserID INTEGER,
 	Date DATE,
 	PRIMARY KEY (UserID, Date),
-	Price INTEGER CHECK (Price>=1 AND Price<=5) DEFAULT 1,
-	Food INTEGER CHECK (Food>=1 AND Food<=5) DEFAULT 1,
-	Mood INTEGER CHECK (Mood>=1 AND Mood<=5) DEFAULT 1,
-	Staff INTEGER CHECK (Staff>=1 AND Staff<=5) DEFAULT 1,
+	Price INTEGER CHECK (Price>=1 AND Price<=10) DEFAULT 1,
+	Food INTEGER CHECK (Food>=1 AND Food<=10) DEFAULT 1,
+	Mood INTEGER CHECK (Mood>=1 AND Mood<=10) DEFAULT 1,
+	Staff INTEGER CHECK (Staff>=1 AND Staff<=10) DEFAULT 1,
 	Comments VARCHAR,
 	RestaurantID INTEGER,
 	FOREIGN KEY (UserID) REFERENCES RATER,
@@ -64,7 +64,7 @@ CREATE TABLE RATINGITEM
 	Date DATE,
 	ItemID INTEGER,
 	PRIMARY KEY (UserID, Date, ItemID),
-	Rating INTEGER CHECK (Rating>=1 AND Rating<=5) DEFAULT 1,
+	Rating INTEGER CHECK (Rating>=1 AND Rating<=10) DEFAULT 1,
 	Comment VARCHAR
 );
 
