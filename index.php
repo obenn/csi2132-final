@@ -76,7 +76,7 @@
             <h3><i class="fas fa-pencil-alt"></i> Raters and reviewers</h3>
             <p>See who's decided to be an armchair critic by looking through our list of raters and see all their reviews.</p>
             <p>Keep in mind that these are anonymous identites, unless someone really was given the name "Meat Lover" at birth, yikes.</p>
-            <p><a href="reviewers.php">Browse through the raters</a></p>
+            <p><a href="raters.php">Browse through the raters</a></p>
             <div class="col-xs-12" style="height:50px;"></div>
         </div>
         <div class="col-sm-3">

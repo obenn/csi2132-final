@@ -77,6 +77,7 @@
             $date = $location['firstopendate'];
             $open = $location['houropen'];
             $close = $location['hourclose'];
+
             echo "<h1>$name</h1>";
             echo "<p>$type</p>";
             echo "<a href=https://$url><p>$url</p></a>";
