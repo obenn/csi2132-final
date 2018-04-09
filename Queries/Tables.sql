@@ -97,7 +97,7 @@ INSERT INTO RATER
 INSERT INTO RATER
 	VALUES (14,'protein.only@gmail.com','Protein Only','2017-01-07','blog',3);
 INSERT INTO RATER
-	VALUES (15,'head.cook@gmail.com','Head Cook','2017-01-08','food critic',5);
+	VALUES (15,'john@gmail.com','John','2017-01-08','food critic',5);
 
 
 INSERT INTO RESTAURANT
