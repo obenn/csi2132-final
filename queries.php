@@ -673,7 +673,7 @@
                 JOIN rater ON rater.userid = rating.userid
                 JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
                 WHERE rating.food IN 	(SELECT MAX(rating.food)
-                            FROM rating) AND rating.mood IN (SELECT MAX(rating.mood)
+                            FROM rating) OR rating.mood IN (SELECT MAX(rating.mood)
                             FROM rating);";
 
                 echo "<code>$query</code>";
@@ -695,7 +695,7 @@
                 JOIN rater ON rater.userid = rating.userid
                 JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
                 WHERE rating.food IN 	(SELECT MAX(rating.food)
-                            FROM rating) AND rating.mood IN (SELECT MAX(rating.mood)
+                            FROM rating) OR rating.mood IN (SELECT MAX(rating.mood)
                             FROM rating);") or die('Query failed: ' . pg_last_error());
                 while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
                     $raname = $result['raname'];
@@ -733,7 +733,7 @@
                 JOIN rater ON rater.userid = rating.userid
                 JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
                 WHERE rating.food IN 	(SELECT MAX(rating.food)
-                            FROM rating) AND rating.mood IN (SELECT MAX(rating.mood)
+                            FROM rating) OR rating.mood IN (SELECT MAX(rating.mood)
                             FROM rating);";
 
                 echo "<code>$query</code>";
@@ -754,7 +754,7 @@
                 JOIN rater ON rater.userid = rating.userid
                 JOIN restaurant ON rating.restaurantid = restaurant.restaurantid
                 WHERE rating.food IN 	(SELECT MAX(rating.food)
-                            FROM rating) AND rating.mood IN (SELECT MAX(rating.mood)
+                            FROM rating) OR rating.mood IN (SELECT MAX(rating.mood)
                             FROM rating);") or die('Query failed: ' . pg_last_error());
                 while ($result = pg_fetch_array($results, null, PGSQL_ASSOC)) {
                     $raname = $result['raname'];
@@ -790,7 +790,8 @@
                   FROM 	  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                           FROM rating
                           JOIN rater ON rating.userid = rater.userid
-                          WHERE rating.restaurantid = 1 /* $$$ */
+                          JOIN restaurant ON rating.RestaurantID = RESTAURANT.RestaurantID
+                                                              WHERE RESTAURANT.name = '$name'
                           GROUP BY 1, rating.restaurantid) AS tmp, rater, rating, menuitem, ratingitem
                   WHERE tmp.smu IN (SELECT MAX(tmp.smu) FROM  (SELECT rater.userid AS userid, rating.restaurantid AS restaurantid, SUM(rating.restaurantid) AS smu
                                                               FROM rating
