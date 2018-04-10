@@ -52,6 +52,7 @@
     if ($_GET['id'] != null) {
         $id = $_GET['id'];
         if ($_POST['delete']) {
+            pg_query("DELETE FROM restaurants.ratingitem WHERE userid=$id") or die('Query failed: ' . pg_last_error());
             pg_query("DELETE FROM restaurants.rating WHERE userid=$id") or die('Query failed: ' . pg_last_error());
             pg_query("DELETE FROM restaurants.rater WHERE userid=$id") or die('Query failed: ' . pg_last_error());
             echo "<h2>Boom, banned <i class=\"fas fa-gavel\"></i></h2>";
