@@ -127,7 +127,7 @@
                     Street Address:
                 </div>
                 <div class="col-md-8">
-                    <input type="text" name="streetaddress" pattern=" /^\s*\S+(?:\s+\S+){2}/" title="Number, street, type. E.g. 50 Varley Lane"><br>
+                    <input type="text" name="streetaddress" pattern="^\s*\S+(?:\s+\S+){2}" title="Number, street, type. E.g. 50 Varley Lane"><br>
                 </div>
             </div>
 
